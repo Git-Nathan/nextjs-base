@@ -10,6 +10,16 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    colors: {
+      "primary-white": "var(--primary-white)",
+      indigo: "var(--indigo)",
+      "dark-blue": "var(--dark-blue)",
+      green: "var(--green)",
+      orange: "var(--orange)",
+    },
+    fontFamily: {
+      nunito: "Nunito, sans-serif",
+    },
   },
   plugins: [],
 };
