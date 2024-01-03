@@ -1,7 +1,8 @@
 "use client";
+import { UserInputModal } from "@/components/UserInputModal";
 import { usersStoreIntance } from "@/mobx/user";
-import { IMovie } from "@/models/movie";
-import { Button, Popconfirm, Table } from "antd";
+import { IUser } from "@/models/user";
+import { Button, Table } from "antd";
 import { ColumnsType } from "antd/es/table";
 import { observer } from "mobx-react-lite";
 import Image from "next/image";
@@ -13,7 +14,7 @@ const UsersPage = () => {
 
   const handleDeleteMovie = async (id: number) => {};
 
-  const columns: ColumnsType<IMovie> = [
+  const columns: ColumnsType<IUser> = [
     {
       title: "ID",
       dataIndex: "id",
@@ -84,12 +85,21 @@ const UsersPage = () => {
     {
       title: "Tuỳ chọn",
       dataIndex: "actions",
-      width: 2,
+      width: 1,
       fixed: "right",
       render(value, record, index) {
         return (
-          <div className="mt-2">
-            <Popconfirm
+          <div key={index} className="mt-2">
+            <UserInputModal
+              id={record.id.toString()}
+              data={{
+                email: record.email,
+                image_user: record.image_user,
+                name: record.name,
+              }}
+              isEdit
+            />
+            {/* <Popconfirm
               title="Bạn có chắn muốn xoá?"
               okText="Xoá"
               cancelText="Hủy"
@@ -100,7 +110,7 @@ const UsersPage = () => {
               <Button danger className="ml-4">
                 Xóa
               </Button>
-            </Popconfirm>
+            </Popconfirm> */}
           </div>
         );
       },

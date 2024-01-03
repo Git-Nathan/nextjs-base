@@ -11,6 +11,6 @@ export interface IUser {
 
 export interface INewUser {
   name: string;
-  username: string;
+  email: string;
   image_user: string;
 }

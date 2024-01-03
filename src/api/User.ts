@@ -9,7 +9,8 @@ export class User {
 
   edit(auth: IAuth, id: string, data: INewUser) {
     return appFetch.get(
-      "/update_user_by_admin?" + new URLSearchParams({ ...auth, id, ...data }),
+      "/update_user_by_admin?" +
+        new URLSearchParams({ ...auth, user_id: id, ...data }),
     );
   }
 }
