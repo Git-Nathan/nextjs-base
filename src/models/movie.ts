@@ -10,6 +10,7 @@ export interface IMovie {
   created_at: string;
   id: number;
 }
+
 export interface INewMovie {
   title: string;
   description: string;

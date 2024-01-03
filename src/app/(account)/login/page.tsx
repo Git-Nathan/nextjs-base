@@ -30,7 +30,7 @@ export default function LoginPage(props: ILoginPageProps) {
 
       if (res.code === 200) {
         localStorage.setItem("profile", JSON.stringify(res.data));
-        toast.success("Login successfully");
+        toast.success("Đăng nhập thành công");
 
         router.push("/movies");
       } else {

@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 export interface IAppHeaderProps {}
 
 export function AppHeader(props: IAppHeaderProps) {
-  const [profile, setProfile] = useState({});
+  const [profile, setProfile] = useState({ username: "" });
 
   const handleLogout = () => {
     localStorage.removeItem("profile");
@@ -20,7 +20,7 @@ export function AppHeader(props: IAppHeaderProps) {
   }, []);
 
   return (
-    <Header className="!bg-primary-white font-nunito flex h-24 justify-between px-10">
+    <Header className="flex h-24 justify-between !bg-primary-white px-10 font-nunito">
       <h1 className="flex h-full items-center text-4xl font-bold">Tổng quan</h1>
       <div className="flex h-full items-center px-4">
         <Image
@@ -31,9 +31,9 @@ export function AppHeader(props: IAppHeaderProps) {
           src="/icons/user.svg"
         />
 
-        {/* <p className="ml-2 text-base">{profile.fullname || ""}</p> */}
+        <p className="ml-2 text-base">{profile.username || ""}</p>
 
-        <Button danger className="font-nunito ml-4" onClick={handleLogout}>
+        <Button danger className="ml-4 font-nunito" onClick={handleLogout}>
           Đăng xuất
         </Button>
       </div>

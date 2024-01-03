@@ -17,7 +17,7 @@ export class Movie {
 
   delete(id: string, auth: IAuth) {
     return appFetch.get(
-      `/modify_movie?` + new URLSearchParams({ ...auth, id }),
+      `/delete_movie?` + new URLSearchParams({ ...auth, movie_id: id }),
     );
   }
 
