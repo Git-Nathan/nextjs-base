@@ -15,8 +15,10 @@
   line-height: 1.5;
   font-weight: 400;
 
-  background-color: #f5f5f5;
-  color: #1a1a1a;
+  --color-background: #f5f5f5;
+  --color-faded: #aaa;
+  --color-success: #31e60a;
+  --color-danger: #dc4446;
 }
 
 #root {
@@ -30,4 +32,36 @@ body {
   flex-direction: column;
   min-width: 320px;
   min-height: 100vh;
+}
+
+.truncate {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &-1 {
+    @extend .truncate;
+    -webkit-line-clamp: 1;
+  }
+
+  &-2 {
+    @extend .truncate;
+    -webkit-line-clamp: 2;
+  }
+
+  &-3 {
+    @extend .truncate;
+    -webkit-line-clamp: 3;
+  }
+
+  &-4 {
+    @extend .truncate;
+    -webkit-line-clamp: 4;
+  }
+
+  &-5 {
+    @extend .truncate;
+    -webkit-line-clamp: 5;
+  }
 }
