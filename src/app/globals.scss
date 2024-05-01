@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '../styles/components/nav-link';
+@import '../styles/layouts/header';
+
 * {
   margin: 0;
   padding: 0;
